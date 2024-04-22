@@ -1,0 +1,10 @@
+#alertsize{
+    width: 90%;
+    margin-left: 60px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+#buttonhome{
+    position: absolute;
+    left: 40%;
+}

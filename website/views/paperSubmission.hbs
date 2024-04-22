@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/papStyle.css">
+    <title>Paper Submission Portal</title>
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: #ECCA3D;">
+  <!-- Navbar content -->
+    <h2>Research Paper Submission Portal</h2>
+  <h1></h1>
+</nav>
+
+<br><br><br>
+<div class="content">
+  <div class="imga">
+  <img src="assets/publish.svg" alt="">
+</div>
+    <div class="card">
+  <div class="card-header">
+    <h3>Submit your Research Paper</h3>
+  </div>
+  <div class="card-body">
+     <form method="POST" action="/paperSubmission" enctype="multipart/form-data">
+     <div class="input-group">
+  <input type="text"  class="form-control" placeholder="Enter Your Name Here" name="personname">
+</div><br>
+  <div class="form-group" class="drop">
+    <select name="tracks" class="btn btn-secondary dropdown-toggle" color="#ecca3d" id="cars" name="track" required>
+  <option value="select">---Select the Track---</option>
+  <option value="CyberSecurity">CyberSecurity</option>
+  <option value="Data Science">Data Science</option>
+  <option value="Artificial Intelligence">Artificial Intelligence</option>
+  <option value="Machine Learning">Machine Learning</option>
+  <option value="Internet of Things">Internet of Things</option>
+  <option value="Blockchain Technology">Blockchain Technology</option>
+</select>
+    <div class="btn-group">
+    </div>
+    <br>
+    <br>
+    <label for="exampleFormControlFile1">Upload The PDF File</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="uploadedFile">
+  </div>
+  <input type="submit" class="btn btn-outline-primary" value="Submit">
+</form>
+  </div>
+</div></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
