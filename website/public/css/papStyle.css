@@ -11,6 +11,13 @@
     padding: 0,0;
     flex-basis: auto;
 }
+
+#error{
+	text-align: center;
+	color: red;
+    font-weight: 700;
+}
+
 hr{
     height: 1px;
     color: #000;
@@ -35,4 +42,19 @@ img{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 870px) {
+    .imga {
+        display: none;
+    }
+
+    .card {
+        margin: 10px;
+        height: auto;
+    }
+
+    .form-control {
+        width: 100%;
+    }
 }

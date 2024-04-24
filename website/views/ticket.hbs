@@ -13,23 +13,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- My Custom CSS -->
     <link rel="stylesheet" href="css/homeStyle.css">
-    <!-- Title and Favicon -->
     <title>VIT Devfest 2024</title>
     <link rel="icon" type="image/png" sizes="16x16" href="https://devfest.gdgrnd.ru/themes/gdg/assets/devfest2019/img/favicon-16x16.png">
 </head>
 <body>
     <nav>
+        <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+         </div>
         <div class="top-nav d-none d-md-flex bg-darky py-3 default-p">
             <i class="fab fa-facebook-f top-nav-item text-white px-3"></i>
             <i class="fab fa-twitter top-nav-item text-white px-3"></i>
-            <a href="#" class="top-nav-item text-white px-3 text-decoration-none">English</a>
+            <a href="#" class="top-nav-item text-white px-3 text-decoration-none"></a>
             <a href="/signup" class="top-nav-item text-white px-3 text-decoration-none">Register</a>
             <a href="/login" class="top-nav-item text-white pl-3 text-decoration-none">Login</a>
         </div>
         <div class="lower-nav d-none d-md-flex default-p py-5 bg-white border-bottom align-items-center">
             <i class="fas fa-bars d-flex d-md-none"></i>
             <div class="nav-branding d-flex align-items-center cursor-pointer">
-                <img src="https://devfest.gdgrnd.ru/themes/gdg/assets/devfest2019/img/logo.png" class="nav-logo" alt="logo">
+                <img src="assets/logo.png" class="nav-logo" alt="logo">
                 <h2 class="nav-title ml-3">VIT Devfest 2024</h2>
             </div>
   
@@ -66,7 +70,7 @@
     <main class="tickets-main">
         <section class="hero-section tickets-hero-section text-center">
             
-            <h1 class="gdg-logo-head">Submit your Research Paper</h1>
+            <h1 class="gdg-logo-head">Tracks for Research Paper</h1>
             <p class="program-head-hr my-3"></p>
             <div class="ticket-steps text-darky my-5">
                
@@ -75,28 +79,25 @@
                 Please select the type of Paper you want to submit.
             </div>
             <div class="tickets-table-wrapper mx-auto p-1">
-               
-                <div class="tickets-table-main container-fluid w-100 p-0">
-                    <div class="dropdown">
-                        <select id="fruit">
-                            <option value="Cybersecurity">Cybersecurity</option>
-                            <option value="Artificial Intelligence">Artificial Intelligence</option>
-                            <option value="oMachine Learning">Machine Learning</option>
-                            <option value="Internet of Things">Internet of Things</option>
-                            <option value="Data Science">Data Science</option>
-                          </select>
-                          
-                          <p>Selected Branch: <span id="selected-fruit"></span></p>
-                          
-                          <script>
-                          // JavaScript to handle dropdown selection
-                          document.getElementById("fruit").addEventListener("change", function() {
-                            var selectedFruit = document.getElementById("fruit").value;
-                            document.getElementById("selected-fruit").innerText = selectedFruit;
-                          });
-                          </script>
-                        
-                    </div>
+               <div class="description"><h2>Cyber security</h2>
+               <p>Cybersecurity involves protecting computer systems, networks, and data from digital attacks, unauthorized access, and theft. It encompasses various measures such as encryption, firewalls, antivirus software, and user education to ensure the confidentiality, integrity, and availability of information.
+            </p>
+            <h2>Data Science</h2>
+            <p>Data science is the interdisciplinary field that uses scientific methods, algorithms, and systems to extract insights and knowledge from structured and unstructured data. It involves techniques such as data mining, machine learning, and statistical analysis to solve complex problems and make data-driven decisions.
+            </p>
+            <h2>Artificial Intelligence</h2>
+            <p>Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. It encompasses tasks such as learning, reasoning, problem-solving, perception, and language understanding. AI technologies aim to </p>
+            <h2>Machine Learning</h2>
+            <p>Machine learning is a subset of artificial intelligence that enables systems to automatically learn and improve from experience without being explicitly programmed. It involves algorithms that allow computers to recognize patterns in data and make predictions or decisions based on those patterns.
+            </p>
+            <h2>Internet of Things (IOT)</h2>
+            <p>The Internet of Things (IoT) refers to the network of interconnected devices embedded with sensors, software, and other technologies, enabling them to collect and exchange data over the internet. These devices can range from everyday objects to industrial machines, creating opportunities for automation, monitoring, and efficiency improvements in various domains.
+            </p>
+            <h2>Blockchain technology</h2>
+            <p>Blockchain technology is a decentralized, distributed ledger system that records transactions across multiple computers in a way that is transparent, secure, and resistant to tampering. Each block in the chain contains a cryptographic hash of the previous block, creating a chronological and immutable record of transactions.</p>
+            </div>    
+            <a href="/login" class="btn btn-primary">Submit</a>
+            <div class="tickets-table-main container-fluid w-100 p-0">
                    
                     </div>
                 </div>

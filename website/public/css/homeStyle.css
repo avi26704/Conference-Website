@@ -14,6 +14,104 @@ html {
 }
 
 body {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(315deg, rgb(0, 0, 0) 3%, rgb(168, 138, 39) 38%, rgb(194, 185, 11) 68%, rgb(255, 213, 0) 98%);
+  animation: gradient 10s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+      transform: translateX(1);
+  }
+
+  25% {
+      transform: translateX(-25%);
+  }
+
+  50% {
+      transform: translateX(-50%);
+  }
+
+  75% {
+      transform: translateX(-25%);
+  }
+
+  100% {
+      transform: translateX(1);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%, 50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%, 80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+body {
   min-width: 22rem;
   font-size: 1.4rem;
   font-family: 'Lato', sans-serif;
@@ -96,12 +194,7 @@ body {
 }
 
 /* Home - Main Section */
-.main {
-  background-image:
-    linear-gradient(rgba(168, 168, 166, 0.192), rgba(168, 166, 166, 0.192)),
-    url(https://icon-icons.com/icon/code-coding/153713);
-  padding-top: 13rem;
-}
+
 
 /* Hero Section */
 .hero-section {
@@ -113,7 +206,8 @@ margin-bottom: 400px;
   padding: 15px;
   background-color: rgb(255, 255, 255);
   box-shadow: 10px 10px;
-  margin-left: 10px;
+  margin-left: -15px;
+  margin-top: 70px;
 }
 
 .first-hero-text {
@@ -159,6 +253,7 @@ margin-bottom: 400px;
     url(../img/programs-bg-image2.jpg);
   background-repeat: repeat;
   background-size: contain;
+  margin-top: 50px;
 }
 
 .program-head-hr {
@@ -356,6 +451,8 @@ margin-bottom: 400px;
   height: max-content;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 .step-diamond {
@@ -381,6 +478,7 @@ margin-bottom: 400px;
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 .tickets-table-head {
@@ -544,7 +642,6 @@ margin-bottom: 400px;
 
   /* About Page */
 
-  /* GDG Logo */
   .gdg-logo-main {
     padding: 3rem 0;
     width: 100%;
@@ -610,4 +707,9 @@ margin-bottom: 400px;
     height: max-content;
     padding: 2rem;
   }
+}
+.description{
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  text-align: left ;
 }

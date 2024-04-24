@@ -1,19 +1,14 @@
 const express=require("express");
 const app=express();
-// const dotenv=require("dotenv");
 const port=process.env.PORT || 5000;
 require("../src/db_connection/connectDB");
 const path=require("path");
 const register=require("../src/models/register");
-// const {json}=require("express");
 const multer  = require('multer')
 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        if(req.body.tracks==="---Select the Track---"){
-            res.send("Please Select a track and then upload the document");
-        }
       cb(null, `./uploaded-files/${req.body.tracks}`)
     },
     filename: function (req, file, cb) {
@@ -47,42 +42,32 @@ app.get("/ticket",(req,res)=>{
     res.render("ticket");
 })
 
-// app.post("/home",(req,res)=>{
-//     res.redirect("/about");
-// })
 
 app.get("/paperSubmission",(req,res)=>{
-    res.render("paperSubmission");
+    res.render("paperSubmission",{message:""});
 })
 
 app.post("/paperSubmission",upload.single("uploadedFile"),(req,res)=>{
     try {
         if(req.body.tracks==="select"){
-            res.status(400).send("Please Select a track and then upload the document");
+            res.status(400).render("paperSubmission",{message:"Please Select a Track"});
         }
         else if(req.body.personname===''){
-            res.status(400).send("Please Enter your name and then upload the document");
+            res.status(400).render("paperSubmission",{message:"Please provide a valid Name"});
         }
         else if(!req.file){
-            res.status(400).send("Please select the document");
+            res.status(400).render("paperSubmission",{message:"Please provide a valid File"});
         }
         else{ res.status(200).redirect("/paperSubmitted");}
     } catch (err) {
         res.status(400).send("Some Error occurred...Please Re-Upload the file.");
     }
-    
 })
 
-function log(){
-    app.get("/signup",(req,res)=>{
-        res.redirect("/login");
-    })
-}
 
 app.get("/login",(req,res)=>{
     res.render("login");
 })
-
 app.post("/login",async (req,res)=>{
     try {
         const email=req.body.email;
@@ -113,20 +98,24 @@ app.post("/signup", async (req,res)=>{
             phone:req.body.phone,
             password:req.body.password
         })
-        
-        const registered=await regData.save();
-        if(registered){
+        const re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+        const re2=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!re.test(req.body.phone)){
+            res.status(400).render("signup",{message:"",error:"Invalid Phone Number"});
+        }
+        else if(!re2.test(req.body.email)){
+            res.status(400).render("signup",{message:"",error:"Invalid Email Id"});
+        }
+        else{
+            const registered=await regData.save();
             res.status(201).render("signup",{message:"User Registered Successfully!",error:""})
-            setTimeout(function() {
-                log();
-              }, 3000)
         }
   {
     return (true)
   }
     } catch (err) {
         res.status(400).render("signup",{message:"",error:"Some Error Occurred...Please Retry."})
-
+        console.log(err);
     }
 })
 

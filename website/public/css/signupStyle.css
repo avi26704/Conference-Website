@@ -20,6 +20,12 @@ body{
 	color: red;
 }
 
+.btna{
+	position: absolute;
+	top: 635px;
+	right: 350px;
+}
+
 .wave{
 	position: fixed;
 	bottom: -28%;
